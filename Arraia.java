@@ -21,7 +21,7 @@ public class Arraia extends Animais {
 
   public int obterProximoId() {
     int maiorId = 0;
-    File file = new File("TESTE2/data/arraia.txt");
+    File file = new File("data/arraia.txt");
 
     try (Scanner scanner = new Scanner(file)) {
       while (scanner.hasNextLine()) {
@@ -65,7 +65,7 @@ public class Arraia extends Animais {
     System.out.print("Digite se tem espinho venenoso (true/false): ");
     boolean espinhoVenenoso = scanner.nextBoolean();
 
-    File file = new File("TESTE2/data/arraia.txt");
+    File file = new File("data/arraia.txt");
     try {
       if (!file.exists()) {
         file.createNewFile();
@@ -86,8 +86,8 @@ public class Arraia extends Animais {
   @Override
   public void removerAnimal(int idAnimal) {
     try {
-      File inputFile = new File("TESTE2/data/arraia.txt");
-      File tempFile = new File("TESTE2/data/temp.txt");
+      File inputFile = new File("data/arraia.txt");
+      File tempFile = new File("data/temp.txt");
 
       BufferedReader reader = new BufferedReader(new FileReader(inputFile));
       BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
@@ -125,7 +125,7 @@ public class Arraia extends Animais {
   @Override
   public Animais buscarAnimal(int idAnimal) {
     try {
-      File file = new File("TESTE2/data/arraia.txt");
+      File file = new File("data/arraia.txt");
       Scanner scanner = new Scanner(file);
       while (scanner.hasNextLine()) {
         String line = scanner.nextLine();
@@ -153,7 +153,7 @@ public class Arraia extends Animais {
   @Override
   public void listarTodosAnimais() {
     try {
-      File file = new File("TESTE2/data/arraia.txt");
+      File file = new File("data/arraia.txt");
       Scanner scanner = new Scanner(file);
       while (scanner.hasNextLine()) {
         String line = scanner.nextLine();

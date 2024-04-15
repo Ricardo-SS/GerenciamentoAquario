@@ -32,7 +32,7 @@ public class Peixe extends Animais {
 
     public int obterProximoId() {
         int maiorId = 0;
-        File file = new File("TESTE2/data/peixes.txt");
+        File file = new File("data/peixes.txt");
 
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
@@ -78,7 +78,7 @@ public class Peixe extends Animais {
         System.out.print("Digite se o peixe tem espinho venenoso (true/false): ");
         boolean espinhoVenenoso = scanner.nextBoolean();
 
-        File file = new File("TESTE2/data/peixes.txt");
+        File file = new File("data/peixes.txt");
         try {
             if (!file.exists()) {
                 file.createNewFile();
@@ -99,8 +99,8 @@ public class Peixe extends Animais {
     @Override
     public void removerAnimal(int idAnimal) {
         try {
-            File inputFile = new File("TESTE2/data/peixes.txt");
-            File tempFile = new File("TESTE2/data/temp.txt");
+            File inputFile = new File("data/peixes.txt");
+            File tempFile = new File("data/temp.txt");
 
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
