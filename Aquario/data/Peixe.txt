@@ -1,2 +1,4 @@
-1,marinha,2.0,algas,23.0,true,true
-2,marinha,2.0,folhas,23.0,true,false
+1,cara,3.0,algas,24.0,true,preta
+3,tambaqui,2.0,algas,23.0,true,false
+4,piranha,2.2,algas,23.0,false,false
+5,cara,0.3,lama,23.0,false,preto

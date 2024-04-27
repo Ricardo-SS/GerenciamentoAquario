@@ -75,7 +75,7 @@ public ArraiaControle() {
       System.out.println("Peixe editado com sucesso.");
   
         // Chame o método escreverArquivo() após a edição dos dados
-        escreverArquivo("data/Peixe.txt");
+        escreverArquivo("data/Arraia.txt");
     } else {
         System.out.println("Peixe não encontrado.");
     }

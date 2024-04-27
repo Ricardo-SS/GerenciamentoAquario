@@ -1,17 +1,21 @@
 package model;
 
 public class Tanque {
+    // Atributos
     private int id;
     private double volume;
     private double temperaturaAgua;
     private boolean aguaSalgada;
     
+    // Construtor
     public Tanque(int id, double volume, double temperaturaAgua, boolean aguaSalgada) {
         this.id = id;
         this.volume = volume;
         this.temperaturaAgua = temperaturaAgua;
         this.aguaSalgada = aguaSalgada;
     }
+
+    // Getters e setters
     public int getId() {
         return id;
     }

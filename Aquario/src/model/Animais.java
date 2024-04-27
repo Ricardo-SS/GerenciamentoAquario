@@ -1,6 +1,7 @@
 package model;
 
 public abstract class Animais {
+    // Atributos
     private int idAnimal;
     private String especie;
     private double tamanho;
@@ -8,6 +9,7 @@ public abstract class Animais {
     private double temperaturaAgua;
     private boolean aguaSalgada;
 
+    // Construtor
     public Animais(int idAnimal, String especie, double tamanho, String dieta,
             double temperaturaAgua, boolean aguaSalgada) {
         this.idAnimal = idAnimal;

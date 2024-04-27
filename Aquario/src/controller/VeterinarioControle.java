@@ -42,6 +42,16 @@ public class VeterinarioControle {
         return veterinarios;
       }
 
+      public Veterinario buscarVeterinario(int id) {
+        for(Veterinario veterinario : veterinarios) {
+          if (veterinario.getId() == id){
+            return veterinario;
+          }
+        }
+        System.out.println("Veterinario não encontrado");
+        return null;
+      }
+
       public int obterProximoId() {
         int maiorId = 0;
         for (Veterinario veterinario : veterinarios) {
@@ -59,7 +69,7 @@ public class VeterinarioControle {
           veterinario.setMatricula(veterinarioEditado.getMatricula());
             System.out.println("veterinario editada com sucesso.");
             // Chame o método escreverArquivo() após a edição dos dados
-            escreverArquivo("data/Tartaruga.txt");
+            escreverArquivo("data/Veterinario.txt");  
         } else {
             System.out.println("veterinario não encontrada.");
         }
@@ -82,13 +92,13 @@ public class VeterinarioControle {
               if (!linha.isEmpty()) { // Verifica se a linha não está vazia
                 String[] partes = linha.split(",");
                 int id = Integer.parseInt(partes[0]);
-                String nome = partes[1];
-                int matricula = Integer.parseInt(partes[2]);
+                int matricula = Integer.parseInt(partes[1]);
+                String nome = partes[2];
                 double comissaoAnimal = Double.parseDouble(partes[3]);
                 int quantAnimais = Integer.parseInt(partes[4]);
                 
     
-                Veterinario veterinario = new Veterinario(id, nome, matricula, comissaoAnimal, quantAnimais);
+                Veterinario veterinario = new Veterinario(id, matricula, nome, comissaoAnimal, quantAnimais);
                 veterinarios.add(veterinario);
               }
             }
@@ -103,18 +113,13 @@ public class VeterinarioControle {
       private void escreverArquivo(String nomeArquivo) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(nomeArquivo))) {
           for (Veterinario veterinario : veterinarios) {
-            writer.println(veterinario.getMatricula() + "," + veterinario.getNome() + "," + veterinario.getComissaoAnimal() + ","
+            writer.println(veterinario.getId() + "," + veterinario.getMatricula() + "," + veterinario.getNome() + "," + veterinario.getComissaoAnimal() + ","
                 + veterinario.getQuantAnimais());
           }
           System.out.println("Veterinários salvos com sucesso no arquivo " + nomeArquivo);
         } catch (IOException e) {
           System.err.println("Erro ao escrever no arquivo: " + e.getMessage());
         }
-      }
-
-      public Veterinario buscarVeterinario(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscarVeterinario'");
       }
     
 }

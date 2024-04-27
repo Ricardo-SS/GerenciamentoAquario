@@ -69,7 +69,7 @@ public void editarGerente(int id, Gerente gerenteEditado) {
       tartaruga.setMatricula(gerenteEditado.getMatricula());
       System.out.println("Gerentes editada com sucesso.");
       // Chame o método escreverArquivo() após a edição dos dados
-      escreverArquivo("data/Gerentes.txt");
+      escreverArquivo("data/Gerente.txt");
   } else {
       System.out.println("Gerentes não encontrada.");
   }

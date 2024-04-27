@@ -54,16 +54,16 @@ public class VeterinarioView {
         // Obter o próximo ID disponível
         int id = veterinarioControle.obterProximoId();
         System.out.print("\nNovo ID atribuido: " + id);
+        System.out.print("\nDigite a matrícula: ");
+        int matricula = scanner.nextInt();
         System.out.print("\nDigite o nome: ");
         String nome = scanner.next();
-        System.out.print("Digite a matrícula: ");
-        int matricula = scanner.nextInt();
         System.out.print("Digite o valor da comissão: ");
         double comissaoAnimal = scanner.nextDouble();
         System.out.print("Digite a quantidade de animais atendidos: ");
         int quantAnimais = scanner.nextInt();
 
-        Veterinario veterinario = new Veterinario(id, nome, matricula, comissaoAnimal, quantAnimais);
+        Veterinario veterinario = new Veterinario(id, matricula, nome, comissaoAnimal, quantAnimais);
         veterinarioControle.inserirVeterinario(veterinario);
     }
 
@@ -103,17 +103,17 @@ public class VeterinarioView {
             System.out.println("Agora você pode editar os dados da veterinário.");
 
             // Solicitar ao usuário os novos dados da veterinario
-            System.out.print("Digite o novo nome: ");
-            String novoNome = scanner.next();
             System.out.print("Digite a nova matricula: ");
             int novaMatricula = scanner.nextInt();
+            System.out.print("Digite o novo nome: ");
+            String novoNome = scanner.next();
             System.out.print("Digite o valor da comissão: ");
             Double novaComissaoAnimal = scanner.nextDouble();
             System.out.print("Digite a quantidade de atendimentos: ");
             int novaQuantDeAnimais = scanner.nextInt();
 
             // Cria uma nova veterinario com os dados atualizados
-            Veterinario veterinarioEditado = new Veterinario(id, novoNome, novaMatricula, novaComissaoAnimal,
+            Veterinario veterinarioEditado = new Veterinario(id, novaMatricula, novoNome, novaComissaoAnimal,
                     novaQuantDeAnimais);
 
             // Chamar o método de edição no controle

@@ -1,15 +1,18 @@
 package model;
 
 public class Veterinario extends Funcionario {
+    // Atributos
     private double comissaoAnimal;
     private int quantAnimais;
-    
-    public Veterinario(int id, String nome, int matricula, double comissaoAnimal, int quantAnimais){
+
+    // Contrutor
+    public Veterinario(int id, int matricula, String nome, double comissaoAnimal, int quantAnimais){
         super(id, nome, matricula);
         this.comissaoAnimal = comissaoAnimal;
         this.quantAnimais = quantAnimais;
     }
-
+    
+    // Getters e setters
     public double getComissaoAnimal() {
         return comissaoAnimal;
     }
@@ -29,8 +32,8 @@ public class Veterinario extends Funcionario {
     @Override
     public String toString(){
         return super.toString() + 
-        "Comissão Animal: " + this.comissaoAnimal +
-        "Quantidade de Animais: " + this.quantAnimais;
+        ", Comissão=" + this.comissaoAnimal +
+        ", Quantidade de Animais=" + this.quantAnimais + "]";
 
     }
 }

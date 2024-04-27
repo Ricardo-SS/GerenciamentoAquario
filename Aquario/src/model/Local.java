@@ -4,11 +4,13 @@ public class Local {
   private int id;
   private String setor;
 
+  // Construtor
   public Local(int id, String setor) {
     this.id = id;
     this.setor = setor;
   }
 
+  // Getters e setters
   public int getId() {
     return id;
   }
@@ -25,7 +27,6 @@ public class Local {
     this.setor = setor;
   }
 
-  
   @Override
   public String toString() {
     return "Local [id=" + id + ", setor=" + setor + "]";

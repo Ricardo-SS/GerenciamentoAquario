@@ -2,7 +2,7 @@ package model;
 
 public class Tartaruga extends Animais {
     private boolean cascoDuro;
-    private int idTanque; // Adicione esta linha
+    private int idTanque;
 
     public Tartaruga(int idAnimal, String especie, double tamanho, String dieta,
             double temperaturaAgua, boolean aguaSalgada, boolean cascoDuro, int idTanque2) {
